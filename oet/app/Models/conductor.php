@@ -10,6 +10,6 @@ class Conductor extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'conductor';
-    protected $primaryKey = 'numero_cedula';
-    protected $fillable = ['primer_nombre','segundo_nombre','apellidos','direccion','telefono','ciudad','vehiculo'];
+    // protected $primaryKey = 'numero_cedula';
+    protected $fillable = ['numero_cedula','primer_nombre','segundo_nombre','apellidos','direccion','telefono','ciudad','vehiculo'];
 }

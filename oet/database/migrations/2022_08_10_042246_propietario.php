@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('propietario', function (Blueprint $table) {
-            $table->id('numero_cedula',10)->nullable(false)->comment('Numero de cédula del propietario');
+            $table->id('numerocedula',10)->nullable(false)->comment('Numero de cédula del propietario');
             $table->string('primer_nombre',255)->nullasble(false)->comment('Primer nombre del propietario');
             $table->string('segundo_nombre',255)->nullable(true)->comment('Segundo nombre del propietario');
             $table->string('apellidos',255)->nullable(false)->comment('Apellidos del propietario');
             $table->string('direccion',255)->nullable(false)->comment('Direccion del propietario');
             $table->string('telefono',15)->nullable(false)->comment('Numero de teléfono del propietario');
             $table->string('ciudad',255)->nullable(false)->comment('Ciudad del propietario');
-            $table->string('vehiculo',10)->nullable(false)->comment('Quien es propietario del vehículo.');
+            $table->string('vehiculo',7)->nullable(false)->comment('Vehículo a nombre de este propietario.');
             $table->foreign('vehiculo')->references('placa')->on('vehiculo')->onDelete('cascade'); 
 
             

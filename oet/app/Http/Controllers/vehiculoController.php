@@ -20,16 +20,33 @@ class vehiculoController extends Controller
     {
         $propietarios = Propietario::all();
         $conductores = Conductor::all();
-        return view('vehiculos.create', compact('propietarios','conductores'));
-        return view('vehiculos.edit', compact('propietarios','conductores'));
+        $placas = Vehiculo::all();
+        return view('vehiculos.create', compact('propietarios','conductores','placas'));
+        // return view('vehiculos.edit', compact('propietarios','conductores','placas'));
     }
 
     public function store(Request $request)
     {
-        $input = $request->all();
-        Vehiculo::create($input);
-        return redirect('vehiculos')->with('Empleado_agregado', 'Empleado agregado!');  
-    }
+        // dd ($request->input('color'));
+        $vehi = $request->input('color');
+        $prop = $request->input('numerocedula');
+        $cond = $request->input('numero_cedula');
+        
+        
+
+        if(!is_null($vehi) and is_null($prop) and is_null($cond)){
+            $input = $request->all();
+            Vehiculo::create($input);
+            return redirect('vehiculos')->with('Vehiculo_Registrado', 'Vehiculo Registrado!');
+        }else if(is_null($vehi) and !is_null($prop) and is_null($cond)){
+            $input = $request->all();
+            Propietario::create($input);
+            return redirect('vehiculos')->with('Conductor_Registrado', 'Conductor Registrado!');
+        }else
+            $input = $request->all();
+            Conductor::create($input);
+            return redirect('vehiculos')->with('Propietario_Registrado', 'Propietario Registrado!');
+        }
 
     public function show($id)
     {

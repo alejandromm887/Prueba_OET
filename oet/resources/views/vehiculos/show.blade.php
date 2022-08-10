@@ -5,12 +5,10 @@
   <div class="card-header">Datos personales</div>
     <div class="card-body mr-3 ml-3">
           <div class="card-body">
-          <p class="card-title"><STRONG>Nombre :</STRONG> {{ $vehiculos->nombre }}</p>
-          <p class="card-text"><STRONG>Email :</STRONG> {{ $vehiculos->email }}</p>
-          <p class="card-text"><STRONG>Sexo :</STRONG> {{ $vehiculos->sexo }}</p>
-          <p class="card-text"><STRONG>Area :</STRONG> {{ $vehiculos->area_id }}</p>
-          <p class="card-text"><STRONG>Boletín :</STRONG> {{ $vehiculos->boletin }}</p>
-          <p class="card-text"><STRONG>Descripcion :</STRONG> {{ $vehiculos->descripcion }}</p>
+          <p class="card-title"><STRONG>Placa :</STRONG> {{ $vehiculos->placa }}</p>
+          <p class="card-text"><STRONG>Color :</STRONG> {{ $vehiculos->color }}</p>
+          <p class="card-text"><STRONG>Marca :</STRONG> {{ $vehiculos->marca }}</p>
+          <p class="card-text"><STRONG>Tipo de vehiculo :</STRONG> {{ $vehiculos->tipo_vehiculo}}</p>
     </div>
   </div>
   <a href="{{ url('/vehiculos/') }}" class="btn btn-success " title="Añadir vehiculos">

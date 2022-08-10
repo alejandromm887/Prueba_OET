@@ -10,6 +10,6 @@ class Propietario extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'propietario';
-    protected $primaryKey = 'numero_cedula';
-    protected $fillable = ['primer_nombre','segundo_nombre','apellidos','direccion','telefono','ciudad','vehiculo'];
+    //protected $primaryKey = 'numero_cedula';
+    protected $fillable = ['numerocedula','primer_nombre','segundo_nombre','apellidos','direccion','telefono','ciudad','vehiculo'];
 }

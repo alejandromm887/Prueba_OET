@@ -13,15 +13,19 @@
                             Agregar nuevo vehiculo
                         </a> -->
 
-                        <div>
-                            <div>
-                                <a href="{{ url('/vehiculos/create') }}" class="btn btn-success btn-sm" title="Añadir empleados">
-                                    Registrar Conducor
+                        <div class="row justify-content-center">
+                            <div class="col-md-6  col-md-offset-5">
+                                <a href="{{ url('/vehiculos/create') }}" class="btn btn-success btn-sm" title="Registrar Conductor/Propietario">
+                                <span class="glyphicon glyphicon-align-left">Realizar registros</span>    
+                                
                                 </a>
                             </div>
-                            <div>
-
-                            </div>
+                            <div class="col-md-2">
+                                <a href="{{ url('/vehiculos/show') }}" class="btn btn-success btn-sm" title="Registrar Vehículos">
+                                    Consultar
+                                </a>
+                            </div> 
+                            
                         </div>
                         <br/>
                         <br/>

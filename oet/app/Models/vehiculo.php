@@ -10,6 +10,6 @@ class Vehiculo extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'vehiculo';
-    protected $primaryKey = 'placa';
-    protected $fillable = ['color','marca','tipo_vehiculo'];
+    // protected $primaryKey = 'placa';
+    protected $fillable = ['placa','color','marca','tipo_vehiculo'];
 }
