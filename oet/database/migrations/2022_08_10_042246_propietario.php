@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('direccion',255)->nullable(false)->comment('Direccion del propietario');
             $table->string('telefono',15)->nullable(false)->comment('Numero de teléfono del propietario');
             $table->string('ciudad',255)->nullable(false)->comment('Ciudad del propietario');
+            $table->string('vehiculo',10)->nullable(false)->comment('Quien es propietario del vehículo.');
+            $table->foreign('vehiculo')->references('placa')->on('vehiculo')->onDelete('cascade'); 
 
             
         });

@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('direccion',255)->nullable(false)->comment('Direccion del conductor');
             $table->string('telefono',15)->nullable(false)->comment('Numero de teléfono del conductor');
             $table->string('ciudad',255)->nullable(false)->comment('Ciudad del conductor');
+            $table->string('vehiculo',10)->nullable(false)->comment('Quien conduce el vehículo.');
+            $table->foreign('vehiculo')->references('placa')->on('vehiculo')->onDelete('cascade');  
 
          
         });
