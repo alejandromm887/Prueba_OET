@@ -7,13 +7,23 @@ use Illuminate\Support\Facades\Session;
 use App\Models\Vehiculo;
 use App\Models\Propietario;
 use App\Models\Conductor;
+// use App\Models\Consulta;
+use Illuminate\Support\Facades\DB;
+
 
 class vehiculoController extends Controller
 {
     public function index()
     {
-        $vehiculos = Vehiculo::all();
-        return view ('vehiculos.index')->with('vehiculos', $vehiculos);
+
+        $consultas = DB::table('vehiculo')
+        ->join('conductor', 'conductor.vehiculo', '=', 'vehiculo.placa')
+        ->join('propietario', 'propietario.vehiculo', '=', 'vehiculo.placa')
+        ->select('vehiculo.placa', 'vehiculo.marca', 'conductor.primer_nombre as conductor', 'propietario.primer_nombre  as propietario')
+        ->get();
+
+        return view ('vehiculos.index')->with('consultas', $consultas);
+
     }
 
     public function create()
@@ -48,29 +58,13 @@ class vehiculoController extends Controller
             return redirect('vehiculos')->with('Propietario_Registrado', 'Propietario Registrado!');
         }
 
-    public function show($id)
+    public function show()
     {
-        $vehiculos = Vehiculo::find($id);
-        return view('vehiculos.show')->with('vehiculos', $vehiculos);
-    }
-
-    public function edit($id)
-    {
-        $vehiculos = Vehiculo::find($id);
-        return view('vehiculos.edit')->with('vehiculos', $vehiculos);
-    }
-
-    public function update(Request $request, $id)
-    {
-        $vehiculos = Vehiculo::find($id);
-        $input = $request->all();
-        $vehiculos->update($input);
-        return redirect('vehiculos')->with('Empleado_actualizado', 'Empleado actualizado!');  
-    }
-    public function destroy($id)
-    {
-        Vehiculo::destroy($id);
-        return redirect('vehiculos')->with('Empleado_eliminado', 'Empleado eliminado!');  
+        $vehiculos = Vehiculo::all();
+        $propietarios = Propietario::all();
+        $conductores = Conductor::all();
+        return view('vehiculos.show', compact('vehiculos','propietarios','conductores'));
+        // return view('vehiculos.create', compact('propietarios','conductores','placas'));
     }
 
 }

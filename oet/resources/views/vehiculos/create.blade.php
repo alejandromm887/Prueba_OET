@@ -85,7 +85,7 @@
         </div>
         <div class="row">
           <div class="col-md-2">
-            <a href="{{ url('/vehiculos/') }}" class="btn btn-success " title="Añadir empleados">
+            <a href="{{ url('/vehiculos/') }}" class="btn btn-success " title="Regresar">
               Atrás
             </a>
           </div>
@@ -171,7 +171,7 @@
         </div>
         <div class="row">
           <div class="col-md-2">
-            <a href="{{ url('/vehiculos/') }}" class="btn btn-success " title="Añadir empleados">
+            <a href="{{ url('/vehiculos/') }}" class="btn btn-success " title="Regresar">
               Atrás
             </a>
           </div>
@@ -229,7 +229,7 @@
         </div>
         <div class="row">
           <div class="col-md-2">
-            <a href="{{ url('/vehiculos/') }}" class="btn btn-success " title="Registrar vehículos">
+            <a href="{{ url('/vehiculos/') }}" class="btn btn-success " title="Regresar">
               Atrás
             </a>
           </div>
