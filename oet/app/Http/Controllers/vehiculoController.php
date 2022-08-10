@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Session;
 use App\Models\Vehiculo;
 use App\Models\Propietario;
 use App\Models\Conductor;
-// use App\Models\Consulta;
 use Illuminate\Support\Facades\DB;
 
 
@@ -32,12 +31,10 @@ class vehiculoController extends Controller
         $conductores = Conductor::all();
         $placas = Vehiculo::all();
         return view('vehiculos.create', compact('propietarios','conductores','placas'));
-        // return view('vehiculos.edit', compact('propietarios','conductores','placas'));
     }
 
     public function store(Request $request)
     {
-        // dd ($request->input('color'));
         $vehi = $request->input('color');
         $prop = $request->input('numerocedula');
         $cond = $request->input('numero_cedula');
@@ -64,7 +61,7 @@ class vehiculoController extends Controller
         $propietarios = Propietario::all();
         $conductores = Conductor::all();
         return view('vehiculos.show', compact('vehiculos','propietarios','conductores'));
-        // return view('vehiculos.create', compact('propietarios','conductores','placas'));
+        
     }
 
 }

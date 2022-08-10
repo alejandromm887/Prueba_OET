@@ -197,7 +197,7 @@
             <label>Color</label>
           </div>
           <div class="col-md mb-2">
-            <input type="text" name="color" id=" color" placeholder="Color" class="form-control" required>
+            <input type="text" name="color" id="color" placeholder="Color" class="form-control" required>
           </div>
         </div>
         <div class="row justify-content-center">

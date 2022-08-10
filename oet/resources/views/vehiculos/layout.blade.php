@@ -6,13 +6,6 @@
     <script type="text/javascript" src="{{ asset('js/vehiculos.js') }}"></script>
 </head>
 <body>
-   @if(Session::get('Vehiculo_eliminado'))
-        <div class="alert alert-danger">
-            <label>Empleado Eliminado!</label>
-        </div>
-    <!-- {{session('Vehiculo_eliminado')}}</div> -->
-   @endif
-
    <!-- REGISTRO EXITOSO -->
    @if(Session::get('Vehiculo_Registrado'))
         <div class="alert alert-info">
@@ -24,20 +17,14 @@
             <label>Conductor Agregado!</label>
         </div>
    @endif
-    <!-- FIN REGISTRO EXITOSO -->
+
    @if(Session::get('Propietario_Registrado'))
         <div class="alert alert-info">
             <label>Propietario Agregado!</label>
         </div>
    @endif
-   @if(Session::get('Vehiculo_actualizado'))
-        <div class="alert alert-success">
-            <label>Empleado Actualizado!</label>
-        </div>
-    <!-- {{session('Vehiculo_actualizado')}}</div> -->
-   @endif
+    <!-- FIN REGISTRO EXITOSO -->
     <div class="container">
-    <!-- @yield('create') -->
     @yield('content')
     
 </div>
